@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+  <title>Ivan B - Blog</title>
+	<meta name="description" content="Blog made for udacity's homework">
+	<meta name="author" content="pic">
+	<link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+
+<div id="navbar">
+  <h2>Ivan B Notes</h2>
+  <a class="active" href="#todo">To Do List</a>
+  <a href="https://ivanotes.wordpress.com/">Blog</a>
+  <a href="https://www.google.com/">Google</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="content">
+  {% block content %}
+  {% endblock %}
+</div>
+
+</body>
+</html>

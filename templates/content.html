@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="myDIV" class="header">
+ <h2>My To Do List</h2>
+ <input type="text" id="myInput" placeholder="Title...">
+ <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  {% for e in entries %}
+    {% if e.is_done %}
+      <li class="checked"> {{ e.title | safe }} </li>
+    {% else %}
+      <li>{{ e.title | safe }}</li>
+    {% endif %}
+  {% endfor %}
+ <!--
+ <li>Ir al gym</li>
+ <li class="checked">Pagar el agua</li>
+ <li>Cita con Cata</li>
+ <li>Comprar huevos</li>
+ <li>Leer un librio</li>
+ <li>Pasar el trapito</li>
+ -->
+</ul>
+
+ <script src="/scripts/script.js"></script>
+
+{% endblock %}
