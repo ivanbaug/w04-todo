@@ -45,6 +45,7 @@ def defaultList():
     for e in thelist:
         en=Entry(title=e)
         en.put()
+    logging.info("Done adding default list")
 
 class Handler(webapp2.RequestHandler):
     def write(self, *a, **kw):
@@ -59,10 +60,9 @@ class MainHandler(Handler):
     def get(self):
         global load_first_time
         if(load_first_time):
-            ndb.delete_multi(
-                Entry.query().fetch(keys_only=True))
-            defaultList()
+            ndb.delete_multi(Entry.query().fetch(keys_only=True))
             load_first_time=False
+            defaultList()
         q = Entry.query().order(-Entry.created)
         logging.info("Count="+str(q.count(100)))
         entries = q.fetch(q.count(100))

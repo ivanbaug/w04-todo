@@ -2,17 +2,18 @@ body {
   margin: 0;
   font-size: 20px;
 }
-
+/*
 .header {
   background-color: #f1f1f1;
   padding: 1px;
   text-align: left;
 }
-
+*/
 #navbar {
   overflow: hidden;
   background-color: #19334d;
   position: fixed; /* Set the navbar to fixed position */
+  z-index:10;
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
 }
@@ -67,6 +68,8 @@ ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    /*position:relative;
+    z-index:-1;*/
 }
 
 /* Style the list items */
@@ -130,6 +133,7 @@ ul li.checked::before {
 }
 
 /* Style the header */
+
 .header {
     background-color: #006699;
     padding: 20px 30px;
@@ -138,6 +142,7 @@ ul li.checked::before {
 }
 
 /* Clear floats after the header */
+
 .header:after {
     content: "";
     display: table;
